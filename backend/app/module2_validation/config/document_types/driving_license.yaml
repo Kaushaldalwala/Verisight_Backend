@@ -1,0 +1,39 @@
+document_type: driving_license
+display_name: Driving License
+identifier_field: license_number
+
+fields:
+  name:
+    required: true
+    type: string
+  license_number:
+    required: true
+    type: identifier
+    pattern: "^[A-Z0-9]{8,20}$"
+  date_of_birth:
+    required: true
+    type: date
+  date_of_issue:
+    required: false
+    type: date
+  date_of_expiry:
+    required: true
+    type: date
+  blood_group:
+    required: false
+    type: enum
+    allowed: ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"]
+  relation:
+    required: false
+    type: string
+
+cross_field_rules:
+  - rule: date_before
+    field_a: date_of_birth
+    field_b: date_of_expiry
+  - rule: not_future_date
+    field: date_of_birth
+  - rule: not_future_date
+    field: date_of_issue
+
+_disclaimer: "Prototype rules for demonstration only — NOT official government specifications"

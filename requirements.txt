@@ -1,0 +1,69 @@
+# Core Framework
+fastapi==0.141.1
+uvicorn==0.52.4
+starlette==1.6.0
+
+# Supabase
+supabase==2.31.0
+supabase-auth==2.31.0
+supabase-functions==2.31.0
+storage3==2.31.0
+realtime==2.31.0
+postgrest==2.31.0
+
+# HTTP
+httpx==0.28.1
+httpcore==1.0.9
+h11==0.16.0
+h2==4.4.1
+hpack==4.2.0
+hyperframe==6.1.0
+
+# Pydantic / Validation
+pydantic==2.13.4
+pydantic_core==2.46.4
+email-validator==2.3.0
+python-multipart==0.0.12
+
+# Auth / Crypto
+PyJWT==2.13.0
+cryptography==50.0.1
+
+# Env
+python-dotenv==1.2.3
+
+# Async
+anyio==4.14.2
+greenlet==3.5.5
+
+# Utilities
+annotated-types==0.8.0
+typing_extensions==4.16.0
+typing-inspection==0.4.4
+python-dateutil==2.9.0.post0
+dnspython==2.8.0
+idna==3.19
+certifi==2026.7.22
+packaging==26.3
+
+# OCR — EasyOCR + deps
+easyocr==1.7.2
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+Pillow>=10.0.0
+
+# OpenCV
+opencv-python-headless>=4.8.0
+
+# Passport OCR
+passporteye>=2.2.0
+matplotlib>=3.7.0
+
+# PyYAML for dynamic document configurations
+PyYAML>=6.0
+
+# Tesseract (optional fallback for Aadhaar OCR)
+pytesseract>=0.3.13
+psycopg2-binary
+pyinstaller

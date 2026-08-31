@@ -1,0 +1,269 @@
+# ============================================================
+# VeriSight Phase 1 - Git Ignore
+# ============================================================
+
+# ------------------------------------------------------------
+# Environment / Secrets
+# ------------------------------------------------------------
+.env
+.env.*
+*.env
+!.env.example
+
+# Credentials / secrets
+*.pem
+*.key
+*.crt
+credentials.json
+service-account.json
+secrets.json
+
+# ------------------------------------------------------------
+# Python
+# ------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.so
+
+.Python
+*.egg
+*.egg-info/
+pip-wheel-metadata/
+*.whl
+
+# Python packaging
+build/
+dist/
+sdist/
+.eggs/
+
+# ------------------------------------------------------------
+# Virtual Environments
+# ------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ------------------------------------------------------------
+# FastAPI / Uvicorn
+# ------------------------------------------------------------
+*.pid
+*.sock
+
+# ------------------------------------------------------------
+# Testing
+# ------------------------------------------------------------
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.cache/
+hypothesis/
+.pyre/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+
+# ------------------------------------------------------------
+# Logs
+# ------------------------------------------------------------
+logs/
+*.log
+*.log.*
+log/
+*.out
+
+# ------------------------------------------------------------
+# Runtime / Temporary Files
+# ------------------------------------------------------------
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.orig
+
+# ------------------------------------------------------------
+# Uploaded Documents / Runtime Data
+# ------------------------------------------------------------
+uploads/
+upload/
+runtime_uploads/
+processed_uploads/
+output/
+outputs/
+
+# ------------------------------------------------------------
+# OCR Temporary Files
+# ------------------------------------------------------------
+ocr_temp/
+ocr_tmp/
+ocr_cache/
+*.ocr
+*.hocr
+
+# OCR generated/debug output
+*_ocr.txt
+*_ocr.json
+*_ocr_result.json
+
+# ------------------------------------------------------------
+# ML / Model Cache
+# ------------------------------------------------------------
+models/cache/
+model_cache/
+.cache/
+huggingface_cache/
+transformers_cache/
+
+# Uncomment these ONLY if models are generated/downloaded
+# automatically and should NOT be committed:
+#
+# models/
+# *.pt
+# *.pth
+# *.onnx
+# *.h5
+# *.keras
+# *.ckpt
+# *.safetensors
+
+# ------------------------------------------------------------
+# Jupyter
+# ------------------------------------------------------------
+.ipynb_checkpoints/
+
+# ------------------------------------------------------------
+# IDE - Visual Studio Code
+# ------------------------------------------------------------
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.example.json
+
+# ------------------------------------------------------------
+# IDE - PyCharm / IntelliJ
+# ------------------------------------------------------------
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# ------------------------------------------------------------
+# Windows
+# ------------------------------------------------------------
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+
+# ------------------------------------------------------------
+# macOS / Linux
+# ------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ------------------------------------------------------------
+# Node / Frontend (if frontend is present)
+# ------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.parcel-cache/
+.next/
+.nuxt/
+.cache/
+
+# ------------------------------------------------------------
+# Frontend Environment
+# ------------------------------------------------------------
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ------------------------------------------------------------
+# Database Local Files
+# ------------------------------------------------------------
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+
+# ------------------------------------------------------------
+# Supabase Local Development
+# ------------------------------------------------------------
+.supabase/
+supabase/.temp/
+
+# IMPORTANT:
+# Keep migration.sql and seed files tracked.
+# Do NOT ignore:
+#
+# database/migration.sql
+# database/seed_database.py
+# database/seed_data/
+
+# ------------------------------------------------------------
+# Generated EXE / Packaging
+# ------------------------------------------------------------
+*.exe
+
+# Keep build configuration tracked:
+# *.spec
+
+# PyInstaller
+*.manifest
+*.toc
+
+# ------------------------------------------------------------
+# Local Development Scripts / Machine Files
+# ------------------------------------------------------------
+local/
+.local/
+machine_config/
+local_config/
+
+# ------------------------------------------------------------
+# Backup / Recovery Files
+# ------------------------------------------------------------
+*.backup
+*.backup.*
+*.old
+*.orig
+
+# ------------------------------------------------------------
+# Project-specific generated files
+# ------------------------------------------------------------
+verification_results/
+generated/
+generated_data/
+runtime_data/
+
+# ------------------------------------------------------------
+# Cache directories
+# ------------------------------------------------------------
+.cache/
+cache/
+__cache__/
+# Local runtime/database files
+backend/data/*.db
+
+# Screen recordings
+*.mp4

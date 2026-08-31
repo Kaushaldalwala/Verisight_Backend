@@ -1,0 +1,148 @@
+{
+  "document_type": "PERMIT",
+  "status": "OCR COMPLETED",
+  "ocr_confidence": 94.03,
+  "reason": "Text was extracted using layout-agnostic OCR and dynamic field detection.",
+  "fields": {
+    "ELAMISLUBA": "PS98765432",
+    "ANANYA": "KODAKONDSUS / CITIZENSHIP SUNNIAEG / DATE OF BIRTH",
+    "07": "1995",
+    "KEHTIV KUNI / CARD EXPIRY": "2029",
+    "Sharma": "876543",
+    "_unpaired_text": [
+      "ELAMISLUBA",
+      "0\"",
+      "EST",
+      "PEREKONNANIMI Eesnimi",
+      "SURNAME Forename",
+      "SHARMA",
+      "ANANYA",
+      "SUGU / SEX",
+      "IND",
+      "14",
+      "07",
+      "N / F",
+      "LOA LIIK",
+      "TYPE OF PERMIT",
+      "KEHTIV KUNI / CARD EXPIRY",
+      "PIKAAJALINE",
+      "ELANIK",
+      "EU",
+      "06",
+      "20",
+      "REMARKS",
+      "MARKUSED",
+      "LONG",
+      "RESIDENT",
+      "TERM",
+      "EC",
+      "TOOTADA",
+      "LUBATUD",
+      "Sharma",
+      "RESIDENCE PERMIT"
+    ]
+  },
+  "scan_log_id": "f35104a0-1a5f-4de8-aecc-d1856872c38a",
+  "validation": {
+    "request_id": "ddec58dc-d09c-46fe-9b81-ab3411e8913d",
+    "document_type": "permit",
+    "validation_status": "FAIL",
+    "validation_score": 0,
+    "database_match": false,
+    "data_source": "none",
+    "source_status": "unconfigured",
+    "document_status": "NOT_FOUND",
+    "checks": [
+      {
+        "rule": "REQUIRED_FIELDS",
+        "status": "FAIL",
+        "severity": "HIGH",
+        "message": "Required field 'name' is missing or empty.",
+        "field": "name",
+        "ocr_value": null,
+        "reference_value": null
+      },
+      {
+        "rule": "REQUIRED_FIELDS",
+        "status": "FAIL",
+        "severity": "HIGH",
+        "message": "Required field 'permit_number' is missing or empty.",
+        "field": "permit_number",
+        "ocr_value": null,
+        "reference_value": null
+      },
+      {
+        "rule": "REQUIRED_FIELDS",
+        "status": "FAIL",
+        "severity": "HIGH",
+        "message": "Required field 'date_of_expiry' is missing or empty.",
+        "field": "date_of_expiry",
+        "ocr_value": null,
+        "reference_value": null
+      },
+      {
+        "rule": "DATE_VALIDATION",
+        "status": "PASS",
+        "severity": "LOW",
+        "message": "Date validation passed.",
+        "field": null,
+        "ocr_value": null,
+        "reference_value": null
+      },
+      {
+        "rule": "DATABASE_LOOKUP",
+        "status": "FAIL",
+        "severity": "HIGH",
+        "message": "No record found in reference database matching identifier.",
+        "field": "permit_number",
+        "ocr_value": null,
+        "reference_value": null
+      }
+    ],
+    "mismatches": [
+      {
+        "field": "name",
+        "type": "MISSING_REQUIRED_FIELD",
+        "severity": "HIGH",
+        "message": "Field 'name' is required by document configuration.",
+        "ocr_value": null,
+        "reference_value": null
+      },
+      {
+        "field": "permit_number",
+        "type": "MISSING_REQUIRED_FIELD",
+        "severity": "HIGH",
+        "message": "Field 'permit_number' is required by document configuration.",
+        "ocr_value": null,
+        "reference_value": null
+      },
+      {
+        "field": "date_of_expiry",
+        "type": "MISSING_REQUIRED_FIELD",
+        "severity": "HIGH",
+        "message": "Field 'date_of_expiry' is required by document configuration.",
+        "ocr_value": null,
+        "reference_value": null
+      },
+      {
+        "field": "permit_number",
+        "type": "DATABASE_NOT_FOUND",
+        "severity": "HIGH",
+        "message": "Identifier not found in registry database",
+        "ocr_value": null,
+        "reference_value": null
+      }
+    ],
+    "warnings": [],
+    "errors": [],
+    "recommendation": "FAIL",
+    "processing_time_ms": 25,
+    "normalized_fields": {
+      "elamisluba": "PS98765432",
+      "ananya": "KODAKONDSUS / CITIZENSHIP SUNNIAEG / DATE OF BIRTH",
+      "07": "1995",
+      "kehtiv kuni / card expiry": "2029-08-31",
+      "sharma": "876543"
+    }
+  }
+}

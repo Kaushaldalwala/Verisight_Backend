@@ -1,0 +1,31 @@
+document_type: national_id
+display_name: National ID
+identifier_field: id_number
+
+fields:
+  name:
+    required: true
+    type: string
+  id_number:
+    required: true
+    type: identifier
+    pattern: "^[A-Z0-9]{5,20}$"
+  nationality:
+    required: false
+    type: country_code
+  date_of_birth:
+    required: false
+    type: date
+  date_of_expiry:
+    required: false
+    type: date
+  gender:
+    required: false
+    type: enum
+    allowed: ["M", "F"]
+
+cross_field_rules:
+  - rule: not_future_date
+    field: date_of_birth
+
+_disclaimer: "Prototype rules for demonstration only — NOT official government specifications"

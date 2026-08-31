@@ -1,0 +1,44 @@
+document_type: visa
+display_name: Visa
+identifier_field: visa_number
+
+fields:
+  name:
+    required: true
+    type: string
+  visa_number:
+    required: true
+    type: identifier
+    pattern: "^[A-Z0-9]{6,15}$"
+  passport_number:
+    required: true
+    type: identifier
+    pattern: "^[A-Z0-9]{6,9}$"
+  nationality:
+    required: true
+    type: country_code
+  visa_type:
+    required: false
+    type: string
+  date_of_birth:
+    required: false
+    type: date
+  date_of_issue:
+    required: false
+    type: date
+  date_of_expiry:
+    required: true
+    type: date
+  gender:
+    required: false
+    type: enum
+    allowed: ["M", "F"]
+
+cross_field_rules:
+  - rule: date_before
+    field_a: date_of_issue
+    field_b: date_of_expiry
+  - rule: not_future_date
+    field: date_of_issue
+
+_disclaimer: "Prototype rules for demonstration only — NOT official government specifications"

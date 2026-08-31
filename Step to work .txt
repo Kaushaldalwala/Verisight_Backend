@@ -1,0 +1,18 @@
+step 1:- login with email and password
+data:----> 
+{
+  "officer_email": "doctest@verisight.dev",
+  "password": "Test@1234567"
+}
+
+step 2:- copy jwt id
+
+step 3:- optional , use auth/me api 
+step 4: - upload the document
+
+
+
+
+cd VeriSight/backend
+..\.venv\Scripts\Activate.ps1
+uvicorn app.main:app --reload

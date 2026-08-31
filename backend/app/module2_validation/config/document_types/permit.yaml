@@ -1,0 +1,33 @@
+document_type: permit
+display_name: Permit / Pass
+identifier_field: permit_number
+
+fields:
+  name:
+    required: true
+    type: string
+  permit_number:
+    required: true
+    type: identifier
+    pattern: "^[A-Z0-9]{5,20}$"
+  permit_type:
+    required: false
+    type: string
+  passport_number:
+    required: false
+    type: identifier
+  date_of_issue:
+    required: false
+    type: date
+  date_of_expiry:
+    required: true
+    type: date
+
+cross_field_rules:
+  - rule: date_before
+    field_a: date_of_issue
+    field_b: date_of_expiry
+  - rule: not_future_date
+    field: date_of_issue
+
+_disclaimer: "Prototype rules for demonstration only — NOT official government specifications"
