@@ -1,0 +1,1474 @@
+{
+  "previous_run": {
+    "passport": {
+      "document_type": "passport",
+      "status": "OCR SUCCESS",
+      "ocr_confidence": 100.0,
+      "reason": "Passport MRZ extracted successfully.",
+      "fields": {
+        "name": "MOHAMMED MUDASEER",
+        "gender": "M",
+        "date_of_birth": "1982-04-04",
+        "nationality": "IN",
+        "passport_type": "P",
+        "passport_number": "H2908283",
+        "issuing_country": "IN",
+        "date_of_expiry": "2019-02-09"
+      },
+      "validation": {
+        "request_id": "0031d563-649f-4677-b4aa-6845df80da32",
+        "document_type": "passport",
+        "validation_status": "MANUAL_REVIEW",
+        "validation_score": 70.0,
+        "database_match": false,
+        "data_source": "government_api",
+        "source_status": "not_found",
+        "document_status": "NOT_FOUND",
+        "checks": [
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'name' is present.",
+            "field": "name",
+            "ocr_value": "MOHAMMED MUDASEER",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'passport_number' is present.",
+            "field": "passport_number",
+            "ocr_value": "H2908283",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'nationality' is present.",
+            "field": "nationality",
+            "ocr_value": "IN",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'date_of_birth' is present.",
+            "field": "date_of_birth",
+            "ocr_value": "1982-04-04",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'date_of_expiry' is present.",
+            "field": "date_of_expiry",
+            "ocr_value": "2019-02-09",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'gender' is present.",
+            "field": "gender",
+            "ocr_value": "M",
+            "reference_value": null
+          },
+          {
+            "rule": "FORMAT_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Field 'passport_number' matches format pattern.",
+            "field": "passport_number",
+            "ocr_value": "H2908283",
+            "reference_value": null
+          },
+          {
+            "rule": "DATE_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Date validation passed.",
+            "field": null,
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "rule": "DATABASE_LOOKUP",
+            "status": "FAIL",
+            "severity": "HIGH",
+            "message": "No record found in reference database matching identifier.",
+            "field": "passport_number",
+            "ocr_value": null,
+            "reference_value": null
+          }
+        ],
+        "mismatches": [
+          {
+            "field": "passport_number",
+            "type": "DATABASE_NOT_FOUND",
+            "severity": "HIGH",
+            "message": "Identifier not found in registry database",
+            "ocr_value": null,
+            "reference_value": null
+          }
+        ],
+        "warnings": [],
+        "errors": [],
+        "recommendation": "MANUAL_REVIEW",
+        "processing_time_ms": 1789,
+        "normalized_fields": {
+          "name": "MOHAMMED MUDASEER",
+          "gender": "M",
+          "date_of_birth": "1982-04-04",
+          "nationality": "IN",
+          "passport_type": "P",
+          "passport_number": "H2908283",
+          "issuing_country": "IN",
+          "date_of_expiry": "2019-02-09"
+        }
+      }
+    },
+    "aadhaar": {
+      "document_type": "aadhaar",
+      "status": "AADHAAR NUMBER DETECTED",
+      "ocr_confidence": 100.0,
+      "reason": "A 12-digit Aadhaar number was detected and the extracted number passed Verhoeff checksum validation.",
+      "fields": {
+        "aadhaar_number": "567890125678",
+        "masked_number": "XXXX XXXX 5678"
+      },
+      "validation": {
+        "request_id": "2c5feed4-2622-4cd3-8b9c-64696c68270d",
+        "document_type": "aadhaar",
+        "validation_status": "MANUAL_REVIEW",
+        "validation_score": 70.0,
+        "database_match": false,
+        "data_source": "government_api",
+        "source_status": "not_found",
+        "document_status": "NOT_FOUND",
+        "checks": [
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'aadhaar_number' is present.",
+            "field": "aadhaar_number",
+            "ocr_value": "567890125678",
+            "reference_value": null
+          },
+          {
+            "rule": "FORMAT_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Field 'aadhaar_number' matches format pattern.",
+            "field": "aadhaar_number",
+            "ocr_value": "567890125678",
+            "reference_value": null
+          },
+          {
+            "rule": "DATE_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Date validation passed.",
+            "field": null,
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "rule": "DATABASE_LOOKUP",
+            "status": "FAIL",
+            "severity": "HIGH",
+            "message": "No record found in reference database matching identifier.",
+            "field": "aadhaar_number",
+            "ocr_value": null,
+            "reference_value": null
+          }
+        ],
+        "mismatches": [
+          {
+            "field": "aadhaar_number",
+            "type": "DATABASE_NOT_FOUND",
+            "severity": "HIGH",
+            "message": "Identifier not found in registry database",
+            "ocr_value": null,
+            "reference_value": null
+          }
+        ],
+        "warnings": [],
+        "errors": [],
+        "recommendation": "MANUAL_REVIEW",
+        "processing_time_ms": 910,
+        "normalized_fields": {
+          "aadhaar_number": "567890125678",
+          "masked_number": "XXXXXXXX5678"
+        }
+      }
+    },
+    "visa": {
+      "document_type": "visa",
+      "status": "MISMATCH DETECTED",
+      "ocr_confidence": 58.19,
+      "reason": "Multiple extracted fields do not match the MRZ.",
+      "fields": {
+        "name": "JOHN SMITH",
+        "surname": "SMITH",
+        "given_name": "JOHN",
+        "passport_number": "Cz6311T47",
+        "visa_number": "FRANKFURT",
+        "visa_type": "/CLASS IOJUN1981 IMD CZ6311T47",
+        "gender": "CZ6311T47",
+        "date_of_birth": "Cz6311T47",
+        "date_of_issue": "M ln",
+        "date_of_expiry": "M ln",
+        "issuing_post": "FRANKFURT",
+        "mrz_line1": "VNUSASMITH<JOHN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<",
+        "mrz_line2": "CZ6311T47<9INDISOOIOI3FI3O4O71B3FRNOOAB42439",
+        "issuing_country": "US",
+        "nationality": "9IN",
+        "personal_number": "71B3FRNOOAB424"
+      },
+      "validation": {
+        "request_id": "6cec3559-6a7a-4fd7-9bd4-2f849cb11d6d",
+        "document_type": "visa",
+        "validation_status": "FAIL",
+        "validation_score": 22.0,
+        "database_match": false,
+        "data_source": "government_api",
+        "source_status": "not_found",
+        "document_status": "NOT_FOUND",
+        "checks": [
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'name' is present.",
+            "field": "name",
+            "ocr_value": "JOHN SMITH",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'visa_number' is present.",
+            "field": "visa_number",
+            "ocr_value": "FRANKFURT",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'passport_number' is present.",
+            "field": "passport_number",
+            "ocr_value": "Cz6311T47",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'nationality' is present.",
+            "field": "nationality",
+            "ocr_value": "9IN",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'date_of_expiry' is present.",
+            "field": "date_of_expiry",
+            "ocr_value": "M ln",
+            "reference_value": null
+          },
+          {
+            "rule": "FORMAT_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Field 'visa_number' matches format pattern.",
+            "field": "visa_number",
+            "ocr_value": "FRANKFURT",
+            "reference_value": null
+          },
+          {
+            "rule": "FORMAT_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Field 'passport_number' matches format pattern.",
+            "field": "passport_number",
+            "ocr_value": "Cz6311T47",
+            "reference_value": null
+          },
+          {
+            "rule": "TYPE_VALIDATION",
+            "status": "FAIL",
+            "severity": "MEDIUM",
+            "message": "Field 'date_of_birth' value 'Cz6311T47' cannot be parsed as a valid date.",
+            "field": "date_of_birth",
+            "ocr_value": "Cz6311T47",
+            "reference_value": null
+          },
+          {
+            "rule": "TYPE_VALIDATION",
+            "status": "FAIL",
+            "severity": "MEDIUM",
+            "message": "Field 'date_of_issue' value 'M ln' cannot be parsed as a valid date.",
+            "field": "date_of_issue",
+            "ocr_value": "M ln",
+            "reference_value": null
+          },
+          {
+            "rule": "TYPE_VALIDATION",
+            "status": "FAIL",
+            "severity": "MEDIUM",
+            "message": "Field 'date_of_expiry' value 'M ln' cannot be parsed as a valid date.",
+            "field": "date_of_expiry",
+            "ocr_value": "M ln",
+            "reference_value": null
+          },
+          {
+            "rule": "TYPE_VALIDATION",
+            "status": "FAIL",
+            "severity": "MEDIUM",
+            "message": "Field 'gender' value 'CZ6311T47' not in allowed values ['M', 'F'].",
+            "field": "gender",
+            "ocr_value": "CZ6311T47",
+            "reference_value": null
+          },
+          {
+            "rule": "DATE_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Date validation passed.",
+            "field": null,
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "rule": "DATABASE_LOOKUP",
+            "status": "FAIL",
+            "severity": "HIGH",
+            "message": "No record found in reference database matching identifier.",
+            "field": "visa_number",
+            "ocr_value": null,
+            "reference_value": null
+          }
+        ],
+        "mismatches": [
+          {
+            "field": "date_of_birth",
+            "type": "INVALID_DATE_TYPE",
+            "severity": "MEDIUM",
+            "message": "Invalid date format",
+            "ocr_value": "Cz6311T47",
+            "reference_value": null
+          },
+          {
+            "field": "date_of_issue",
+            "type": "INVALID_DATE_TYPE",
+            "severity": "MEDIUM",
+            "message": "Invalid date format",
+            "ocr_value": "M ln",
+            "reference_value": null
+          },
+          {
+            "field": "date_of_expiry",
+            "type": "INVALID_DATE_TYPE",
+            "severity": "MEDIUM",
+            "message": "Invalid date format",
+            "ocr_value": "M ln",
+            "reference_value": null
+          },
+          {
+            "field": "gender",
+            "type": "ENUM_OUT_OF_RANGE",
+            "severity": "MEDIUM",
+            "message": "Allowed values: ['M', 'F']",
+            "ocr_value": "CZ6311T47",
+            "reference_value": null
+          },
+          {
+            "field": "visa_number",
+            "type": "DATABASE_NOT_FOUND",
+            "severity": "HIGH",
+            "message": "Identifier not found in registry database",
+            "ocr_value": null,
+            "reference_value": null
+          }
+        ],
+        "warnings": [],
+        "errors": [],
+        "recommendation": "FAIL",
+        "processing_time_ms": 1277,
+        "normalized_fields": {
+          "name": "JOHN SMITH",
+          "surname": "SMITH",
+          "given_name": "JOHN",
+          "passport_number": "CZ6311T47",
+          "visa_number": "FRANKFURT",
+          "visa_type": "/CLASS IOJUN1981 IMD CZ6311T47",
+          "gender": "C",
+          "date_of_birth": "Cz6311T47",
+          "date_of_issue": "M ln",
+          "date_of_expiry": "M ln",
+          "issuing_post": "FRANKFURT",
+          "mrz_line1": "VNUSASMITH<JOHN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<",
+          "mrz_line2": "CZ6311T47<9INDISOOIOI3FI3O4O71B3FRNOOAB42439",
+          "issuing_country": "US",
+          "nationality": "9IN",
+          "personal_number": "71B3FRNOOAB424"
+        }
+      }
+    },
+    "driving_license": {
+      "document_type": "driving_license",
+      "status": "REVIEW REQUIRED",
+      "ocr_confidence": 0.0,
+      "reason": "Several fields were detected, but manual review is recommended.",
+      "fields": {
+        "date_of_issue": "2013-09-23",
+        "date_of_birth": "2013-09-23",
+        "name": "ASHPAF AT F NOME EEEE"
+      },
+      "validation": {
+        "request_id": "1c7ec863-e69f-47d3-9ee3-a52f4e914c28",
+        "document_type": "driving_license",
+        "validation_status": "FAIL",
+        "validation_score": 7.0,
+        "database_match": false,
+        "data_source": "none",
+        "source_status": "unconfigured",
+        "document_status": "NOT_FOUND",
+        "checks": [
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'name' is present.",
+            "field": "name",
+            "ocr_value": "ASHPAF AT F NOME EEEE",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "FAIL",
+            "severity": "HIGH",
+            "message": "Required field 'license_number' is missing or empty.",
+            "field": "license_number",
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'date_of_birth' is present.",
+            "field": "date_of_birth",
+            "ocr_value": "2013-09-23",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "FAIL",
+            "severity": "HIGH",
+            "message": "Required field 'date_of_expiry' is missing or empty.",
+            "field": "date_of_expiry",
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "rule": "DATE_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Date validation passed.",
+            "field": null,
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "rule": "DATABASE_LOOKUP",
+            "status": "FAIL",
+            "severity": "HIGH",
+            "message": "No record found in reference database matching identifier.",
+            "field": "license_number",
+            "ocr_value": null,
+            "reference_value": null
+          }
+        ],
+        "mismatches": [
+          {
+            "field": "license_number",
+            "type": "MISSING_REQUIRED_FIELD",
+            "severity": "HIGH",
+            "message": "Field 'license_number' is required by document configuration.",
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "field": "date_of_expiry",
+            "type": "MISSING_REQUIRED_FIELD",
+            "severity": "HIGH",
+            "message": "Field 'date_of_expiry' is required by document configuration.",
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "field": "license_number",
+            "type": "DATABASE_NOT_FOUND",
+            "severity": "HIGH",
+            "message": "Identifier not found in registry database",
+            "ocr_value": null,
+            "reference_value": null
+          }
+        ],
+        "warnings": [],
+        "errors": [],
+        "recommendation": "FAIL",
+        "processing_time_ms": 4,
+        "normalized_fields": {
+          "date_of_issue": "2013-09-23",
+          "date_of_birth": "2013-09-23",
+          "name": "ASHPAF AT F NOME EEEE"
+        }
+      }
+    },
+    "national_id": {
+      "document_type": "national_id",
+      "status": "OCR COMPLETED",
+      "ocr_confidence": 80.41,
+      "reason": "Text was extracted using layout-agnostic OCR and dynamic field detection.",
+      "fields": {
+        "surname": "LETERNIOETIMMP",
+        "given_name": "EZelcORNBANIA",
+        "date_of_birth": "1991-11-20",
+        "gender": "M",
+        "date_of_expiry": "2029-04-13",
+        "name": "EZelcORNBANIA LETERNIOETIMMP"
+      },
+      "validation": {
+        "request_id": "022a4fc4-fd19-4408-ba8b-2a2472ce42f0",
+        "document_type": "national_id",
+        "validation_status": "FAIL",
+        "validation_score": 46.0,
+        "database_match": false,
+        "data_source": "none",
+        "source_status": "unconfigured",
+        "document_status": "NOT_FOUND",
+        "checks": [
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'name' is present.",
+            "field": "name",
+            "ocr_value": "EZelcORNBANIA LETERNIOETIMMP",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "FAIL",
+            "severity": "HIGH",
+            "message": "Required field 'id_number' is missing or empty.",
+            "field": "id_number",
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "rule": "DATE_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Date validation passed.",
+            "field": null,
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "rule": "DATABASE_LOOKUP",
+            "status": "FAIL",
+            "severity": "HIGH",
+            "message": "No record found in reference database matching identifier.",
+            "field": "id_number",
+            "ocr_value": null,
+            "reference_value": null
+          }
+        ],
+        "mismatches": [
+          {
+            "field": "id_number",
+            "type": "MISSING_REQUIRED_FIELD",
+            "severity": "HIGH",
+            "message": "Field 'id_number' is required by document configuration.",
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "field": "id_number",
+            "type": "DATABASE_NOT_FOUND",
+            "severity": "HIGH",
+            "message": "Identifier not found in registry database",
+            "ocr_value": null,
+            "reference_value": null
+          }
+        ],
+        "warnings": [],
+        "errors": [],
+        "recommendation": "FAIL",
+        "processing_time_ms": 3,
+        "normalized_fields": {
+          "surname": "LETERNIOETIMMP",
+          "given_name": "EZELCORNBANIA",
+          "date_of_birth": "1991-11-20",
+          "gender": "M",
+          "date_of_expiry": "2029-04-13",
+          "name": "EZELCORNBANIA LETERNIOETIMMP"
+        }
+      }
+    },
+    "permit": {
+      "document_type": "permit",
+      "status": "OCR COMPLETED",
+      "ocr_confidence": 79.6,
+      "reason": "Text was extracted using layout-agnostic OCR and dynamic field detection.",
+      "fields": {
+        "permit_number": "PS1234567",
+        "date_of_expiry": "2025",
+        "surname": "JOEORG",
+        "given_name": "Jaak-Kristjan",
+        "nationality": "M/M",
+        "gender": "M",
+        "permit_type": "PIKAAJALTNE",
+        "date_of_birth": "1980-01-08",
+        "name": "Jaak-Kristjan JOEORG"
+      },
+      "validation": {
+        "request_id": "a04117c4-9ece-4a30-befd-1b3f90cfd23c",
+        "document_type": "permit",
+        "validation_status": "MANUAL_REVIEW",
+        "validation_score": 70.0,
+        "database_match": false,
+        "data_source": "government_api",
+        "source_status": "not_found",
+        "document_status": "NOT_FOUND",
+        "checks": [
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'name' is present.",
+            "field": "name",
+            "ocr_value": "Jaak-Kristjan JOEORG",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'permit_number' is present.",
+            "field": "permit_number",
+            "ocr_value": "PS1234567",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'date_of_expiry' is present.",
+            "field": "date_of_expiry",
+            "ocr_value": "2025",
+            "reference_value": null
+          },
+          {
+            "rule": "FORMAT_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Field 'permit_number' matches format pattern.",
+            "field": "permit_number",
+            "ocr_value": "PS1234567",
+            "reference_value": null
+          },
+          {
+            "rule": "DATE_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Date validation passed.",
+            "field": null,
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "rule": "DATABASE_LOOKUP",
+            "status": "FAIL",
+            "severity": "HIGH",
+            "message": "No record found in reference database matching identifier.",
+            "field": "permit_number",
+            "ocr_value": null,
+            "reference_value": null
+          }
+        ],
+        "mismatches": [
+          {
+            "field": "permit_number",
+            "type": "DATABASE_NOT_FOUND",
+            "severity": "HIGH",
+            "message": "Identifier not found in registry database",
+            "ocr_value": null,
+            "reference_value": null
+          }
+        ],
+        "warnings": [],
+        "errors": [],
+        "recommendation": "MANUAL_REVIEW",
+        "processing_time_ms": 712,
+        "normalized_fields": {
+          "permit_number": "PS1234567",
+          "date_of_expiry": "2025-09-01",
+          "surname": "JOEORG",
+          "given_name": "JAAK KRISTJAN",
+          "nationality": "M/M",
+          "gender": "M",
+          "permit_type": "PIKAAJALTNE",
+          "date_of_birth": "1980-01-08",
+          "name": "JAAK KRISTJAN JOEORG"
+        }
+      }
+    }
+  },
+  "latest_run": {
+    "passport": {
+      "document_type": "passport",
+      "status": "OCR SUCCESS",
+      "ocr_confidence": 100.0,
+      "reason": "Passport MRZ extracted successfully.",
+      "fields": {
+        "name": "MOHAMMED MUDASEER",
+        "gender": "M",
+        "date_of_birth": "1982-04-04",
+        "nationality": "IN",
+        "passport_type": "P",
+        "passport_number": "H2908283",
+        "issuing_country": "IN",
+        "date_of_expiry": "2019-02-09"
+      },
+      "validation": {
+        "request_id": "eed7ad8f-f962-486b-a909-4097e84a14f2",
+        "document_type": "passport",
+        "validation_status": "PASS",
+        "validation_score": 100.0,
+        "database_match": true,
+        "data_source": "government_api",
+        "source_status": "active",
+        "document_status": "ACTIVE",
+        "checks": [
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'name' is present.",
+            "field": "name",
+            "ocr_value": "MOHAMMED MUDASEER",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'passport_number' is present.",
+            "field": "passport_number",
+            "ocr_value": "H2908283",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'nationality' is present.",
+            "field": "nationality",
+            "ocr_value": "IN",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'date_of_birth' is present.",
+            "field": "date_of_birth",
+            "ocr_value": "1982-04-04",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'date_of_expiry' is present.",
+            "field": "date_of_expiry",
+            "ocr_value": "2019-02-09",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'gender' is present.",
+            "field": "gender",
+            "ocr_value": "M",
+            "reference_value": null
+          },
+          {
+            "rule": "FORMAT_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Field 'passport_number' matches format pattern.",
+            "field": "passport_number",
+            "ocr_value": "H2908283",
+            "reference_value": null
+          },
+          {
+            "rule": "DATE_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Date validation passed.",
+            "field": null,
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "rule": "DATABASE_FIELD_MATCH",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Name match in DB (Similarity: 100.0%).",
+            "field": "name",
+            "ocr_value": "MOHAMMED MUDASEER",
+            "reference_value": "MOHAMMED MUDASEER"
+          },
+          {
+            "rule": "DOCUMENT_STATUS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Document status is 'ACTIVE'.",
+            "field": "status",
+            "ocr_value": null,
+            "reference_value": "ACTIVE"
+          }
+        ],
+        "mismatches": [],
+        "warnings": [],
+        "errors": [],
+        "recommendation": "PASS",
+        "processing_time_ms": 1415,
+        "normalized_fields": {
+          "name": "MOHAMMED MUDASEER",
+          "gender": "M",
+          "date_of_birth": "1982-04-04",
+          "nationality": "IN",
+          "passport_type": "P",
+          "passport_number": "H2908283",
+          "issuing_country": "IN",
+          "date_of_expiry": "2019-02-09"
+        }
+      }
+    },
+    "aadhaar": {
+      "document_type": "aadhaar",
+      "status": "AADHAAR NUMBER DETECTED",
+      "ocr_confidence": 100.0,
+      "reason": "A 12-digit Aadhaar number was detected and the extracted number passed Verhoeff checksum validation.",
+      "fields": {
+        "aadhaar_number": "567890125678",
+        "masked_number": "XXXX XXXX 5678"
+      },
+      "validation": {
+        "request_id": "fab9db50-d057-47c6-8c5f-0726a5892707",
+        "document_type": "aadhaar",
+        "validation_status": "PASS",
+        "validation_score": 100.0,
+        "database_match": true,
+        "data_source": "government_api",
+        "source_status": "active",
+        "document_status": "ACTIVE",
+        "checks": [
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'aadhaar_number' is present.",
+            "field": "aadhaar_number",
+            "ocr_value": "567890125678",
+            "reference_value": null
+          },
+          {
+            "rule": "FORMAT_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Field 'aadhaar_number' matches format pattern.",
+            "field": "aadhaar_number",
+            "ocr_value": "567890125678",
+            "reference_value": null
+          },
+          {
+            "rule": "DATE_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Date validation passed.",
+            "field": null,
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "rule": "DOCUMENT_STATUS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Document status is 'ACTIVE'.",
+            "field": "status",
+            "ocr_value": null,
+            "reference_value": "ACTIVE"
+          }
+        ],
+        "mismatches": [],
+        "warnings": [],
+        "errors": [],
+        "recommendation": "PASS",
+        "processing_time_ms": 710,
+        "normalized_fields": {
+          "aadhaar_number": "567890125678",
+          "masked_number": "XXXXXXXX5678"
+        }
+      }
+    },
+    "visa": {
+      "document_type": "visa",
+      "status": "MISMATCH DETECTED",
+      "ocr_confidence": 58.19,
+      "reason": "Multiple extracted fields do not match the MRZ.",
+      "fields": {
+        "name": "JOHN SMITH",
+        "surname": "SMITH",
+        "given_name": "JOHN",
+        "passport_number": "Cz6311T47",
+        "visa_number": "FRANKFURT",
+        "visa_type": "/CLASS IOJUN1981 IMD CZ6311T47",
+        "gender": "CZ6311T47",
+        "date_of_birth": "Cz6311T47",
+        "date_of_issue": "M ln",
+        "date_of_expiry": "M ln",
+        "issuing_post": "FRANKFURT",
+        "mrz_line1": "VNUSASMITH<JOHN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<",
+        "mrz_line2": "CZ6311T47<9INDISOOIOI3FI3O4O71B3FRNOOAB42439",
+        "issuing_country": "US",
+        "nationality": "9IN",
+        "personal_number": "71B3FRNOOAB424"
+      },
+      "validation": {
+        "request_id": "69c5bdce-70bb-4cdf-ae71-4795c9980dc2",
+        "document_type": "visa",
+        "validation_status": "MANUAL_REVIEW",
+        "validation_score": 52.0,
+        "database_match": true,
+        "data_source": "government_api",
+        "source_status": "active",
+        "document_status": "ACTIVE",
+        "checks": [
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'name' is present.",
+            "field": "name",
+            "ocr_value": "JOHN SMITH",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'visa_number' is present.",
+            "field": "visa_number",
+            "ocr_value": "FRANKFURT",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'passport_number' is present.",
+            "field": "passport_number",
+            "ocr_value": "Cz6311T47",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'nationality' is present.",
+            "field": "nationality",
+            "ocr_value": "9IN",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'date_of_expiry' is present.",
+            "field": "date_of_expiry",
+            "ocr_value": "M ln",
+            "reference_value": null
+          },
+          {
+            "rule": "FORMAT_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Field 'visa_number' matches format pattern.",
+            "field": "visa_number",
+            "ocr_value": "FRANKFURT",
+            "reference_value": null
+          },
+          {
+            "rule": "FORMAT_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Field 'passport_number' matches format pattern.",
+            "field": "passport_number",
+            "ocr_value": "Cz6311T47",
+            "reference_value": null
+          },
+          {
+            "rule": "TYPE_VALIDATION",
+            "status": "FAIL",
+            "severity": "MEDIUM",
+            "message": "Field 'date_of_birth' value 'Cz6311T47' cannot be parsed as a valid date.",
+            "field": "date_of_birth",
+            "ocr_value": "Cz6311T47",
+            "reference_value": null
+          },
+          {
+            "rule": "TYPE_VALIDATION",
+            "status": "FAIL",
+            "severity": "MEDIUM",
+            "message": "Field 'date_of_issue' value 'M ln' cannot be parsed as a valid date.",
+            "field": "date_of_issue",
+            "ocr_value": "M ln",
+            "reference_value": null
+          },
+          {
+            "rule": "TYPE_VALIDATION",
+            "status": "FAIL",
+            "severity": "MEDIUM",
+            "message": "Field 'date_of_expiry' value 'M ln' cannot be parsed as a valid date.",
+            "field": "date_of_expiry",
+            "ocr_value": "M ln",
+            "reference_value": null
+          },
+          {
+            "rule": "TYPE_VALIDATION",
+            "status": "FAIL",
+            "severity": "MEDIUM",
+            "message": "Field 'gender' value 'CZ6311T47' not in allowed values ['M', 'F'].",
+            "field": "gender",
+            "ocr_value": "CZ6311T47",
+            "reference_value": null
+          },
+          {
+            "rule": "DATE_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Date validation passed.",
+            "field": null,
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "rule": "DATABASE_FIELD_MATCH",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Name match in DB (Similarity: 100.0%).",
+            "field": "name",
+            "ocr_value": "JOHN SMITH",
+            "reference_value": "JOHN SMITH"
+          },
+          {
+            "rule": "DOCUMENT_STATUS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Document status is 'ACTIVE'.",
+            "field": "status",
+            "ocr_value": null,
+            "reference_value": "ACTIVE"
+          }
+        ],
+        "mismatches": [
+          {
+            "field": "date_of_birth",
+            "type": "INVALID_DATE_TYPE",
+            "severity": "MEDIUM",
+            "message": "Invalid date format",
+            "ocr_value": "Cz6311T47",
+            "reference_value": null
+          },
+          {
+            "field": "date_of_issue",
+            "type": "INVALID_DATE_TYPE",
+            "severity": "MEDIUM",
+            "message": "Invalid date format",
+            "ocr_value": "M ln",
+            "reference_value": null
+          },
+          {
+            "field": "date_of_expiry",
+            "type": "INVALID_DATE_TYPE",
+            "severity": "MEDIUM",
+            "message": "Invalid date format",
+            "ocr_value": "M ln",
+            "reference_value": null
+          },
+          {
+            "field": "gender",
+            "type": "ENUM_OUT_OF_RANGE",
+            "severity": "MEDIUM",
+            "message": "Allowed values: ['M', 'F']",
+            "ocr_value": "CZ6311T47",
+            "reference_value": null
+          }
+        ],
+        "warnings": [],
+        "errors": [],
+        "recommendation": "MANUAL_REVIEW",
+        "processing_time_ms": 423,
+        "normalized_fields": {
+          "name": "JOHN SMITH",
+          "surname": "SMITH",
+          "given_name": "JOHN",
+          "passport_number": "CZ6311T47",
+          "visa_number": "FRANKFURT",
+          "visa_type": "/CLASS IOJUN1981 IMD CZ6311T47",
+          "gender": "C",
+          "date_of_birth": "Cz6311T47",
+          "date_of_issue": "M ln",
+          "date_of_expiry": "M ln",
+          "issuing_post": "FRANKFURT",
+          "mrz_line1": "VNUSASMITH<JOHN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<",
+          "mrz_line2": "CZ6311T47<9INDISOOIOI3FI3O4O71B3FRNOOAB42439",
+          "issuing_country": "US",
+          "nationality": "9IN",
+          "personal_number": "71B3FRNOOAB424"
+        }
+      }
+    },
+    "driving_license": {
+      "document_type": "driving_license",
+      "status": "REVIEW REQUIRED",
+      "ocr_confidence": 0.0,
+      "reason": "Several fields were detected, but manual review is recommended.",
+      "fields": {
+        "date_of_issue": "2013-09-23",
+        "date_of_birth": "2013-09-23",
+        "name": "ASHPAF AT F NOME EEEE"
+      },
+      "validation": {
+        "request_id": "08405a7a-520a-4ad3-9829-de8e068e4aab",
+        "document_type": "driving_license",
+        "validation_status": "FAIL",
+        "validation_score": 7.0,
+        "database_match": false,
+        "data_source": "none",
+        "source_status": "unconfigured",
+        "document_status": "NOT_FOUND",
+        "checks": [
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'name' is present.",
+            "field": "name",
+            "ocr_value": "ASHPAF AT F NOME EEEE",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "FAIL",
+            "severity": "HIGH",
+            "message": "Required field 'license_number' is missing or empty.",
+            "field": "license_number",
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'date_of_birth' is present.",
+            "field": "date_of_birth",
+            "ocr_value": "2013-09-23",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "FAIL",
+            "severity": "HIGH",
+            "message": "Required field 'date_of_expiry' is missing or empty.",
+            "field": "date_of_expiry",
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "rule": "DATE_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Date validation passed.",
+            "field": null,
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "rule": "DATABASE_LOOKUP",
+            "status": "FAIL",
+            "severity": "HIGH",
+            "message": "No record found in reference database matching identifier.",
+            "field": "license_number",
+            "ocr_value": null,
+            "reference_value": null
+          }
+        ],
+        "mismatches": [
+          {
+            "field": "license_number",
+            "type": "MISSING_REQUIRED_FIELD",
+            "severity": "HIGH",
+            "message": "Field 'license_number' is required by document configuration.",
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "field": "date_of_expiry",
+            "type": "MISSING_REQUIRED_FIELD",
+            "severity": "HIGH",
+            "message": "Field 'date_of_expiry' is required by document configuration.",
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "field": "license_number",
+            "type": "DATABASE_NOT_FOUND",
+            "severity": "HIGH",
+            "message": "Identifier not found in registry database",
+            "ocr_value": null,
+            "reference_value": null
+          }
+        ],
+        "warnings": [],
+        "errors": [],
+        "recommendation": "FAIL",
+        "processing_time_ms": 5,
+        "normalized_fields": {
+          "date_of_issue": "2013-09-23",
+          "date_of_birth": "2013-09-23",
+          "name": "ASHPAF AT F NOME EEEE"
+        }
+      }
+    },
+    "national_id": {
+      "document_type": "national_id",
+      "status": "OCR COMPLETED",
+      "ocr_confidence": 80.41,
+      "reason": "Text was extracted using layout-agnostic OCR and dynamic field detection.",
+      "fields": {
+        "surname": "LETERNIOETIMMP",
+        "given_name": "EZelcORNBANIA",
+        "date_of_birth": "1991-11-20",
+        "gender": "M",
+        "date_of_expiry": "2029-04-13",
+        "name": "EZelcORNBANIA LETERNIOETIMMP"
+      },
+      "validation": {
+        "request_id": "2cd205c5-b004-4a0b-a25b-ace15ce14c5d",
+        "document_type": "national_id",
+        "validation_status": "FAIL",
+        "validation_score": 46.0,
+        "database_match": false,
+        "data_source": "none",
+        "source_status": "unconfigured",
+        "document_status": "NOT_FOUND",
+        "checks": [
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'name' is present.",
+            "field": "name",
+            "ocr_value": "EZelcORNBANIA LETERNIOETIMMP",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "FAIL",
+            "severity": "HIGH",
+            "message": "Required field 'id_number' is missing or empty.",
+            "field": "id_number",
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "rule": "DATE_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Date validation passed.",
+            "field": null,
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "rule": "DATABASE_LOOKUP",
+            "status": "FAIL",
+            "severity": "HIGH",
+            "message": "No record found in reference database matching identifier.",
+            "field": "id_number",
+            "ocr_value": null,
+            "reference_value": null
+          }
+        ],
+        "mismatches": [
+          {
+            "field": "id_number",
+            "type": "MISSING_REQUIRED_FIELD",
+            "severity": "HIGH",
+            "message": "Field 'id_number' is required by document configuration.",
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "field": "id_number",
+            "type": "DATABASE_NOT_FOUND",
+            "severity": "HIGH",
+            "message": "Identifier not found in registry database",
+            "ocr_value": null,
+            "reference_value": null
+          }
+        ],
+        "warnings": [],
+        "errors": [],
+        "recommendation": "FAIL",
+        "processing_time_ms": 4,
+        "normalized_fields": {
+          "surname": "LETERNIOETIMMP",
+          "given_name": "EZELCORNBANIA",
+          "date_of_birth": "1991-11-20",
+          "gender": "M",
+          "date_of_expiry": "2029-04-13",
+          "name": "EZELCORNBANIA LETERNIOETIMMP"
+        }
+      }
+    },
+    "permit": {
+      "document_type": "permit",
+      "status": "OCR COMPLETED",
+      "ocr_confidence": 79.6,
+      "reason": "Text was extracted using layout-agnostic OCR and dynamic field detection.",
+      "fields": {
+        "permit_number": "PS1234567",
+        "date_of_expiry": "2025",
+        "surname": "JOEORG",
+        "given_name": "Jaak-Kristjan",
+        "nationality": "M/M",
+        "gender": "M",
+        "permit_type": "PIKAAJALTNE",
+        "date_of_birth": "1980-01-08",
+        "name": "Jaak-Kristjan JOEORG"
+      },
+      "validation": {
+        "request_id": "f86178ba-93e4-48fb-8940-cd4c7abcded2",
+        "document_type": "permit",
+        "validation_status": "PASS",
+        "validation_score": 100.0,
+        "database_match": true,
+        "data_source": "government_api",
+        "source_status": "active",
+        "document_status": "ACTIVE",
+        "checks": [
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'name' is present.",
+            "field": "name",
+            "ocr_value": "Jaak-Kristjan JOEORG",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'permit_number' is present.",
+            "field": "permit_number",
+            "ocr_value": "PS1234567",
+            "reference_value": null
+          },
+          {
+            "rule": "REQUIRED_FIELDS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Required field 'date_of_expiry' is present.",
+            "field": "date_of_expiry",
+            "ocr_value": "2025",
+            "reference_value": null
+          },
+          {
+            "rule": "FORMAT_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Field 'permit_number' matches format pattern.",
+            "field": "permit_number",
+            "ocr_value": "PS1234567",
+            "reference_value": null
+          },
+          {
+            "rule": "DATE_VALIDATION",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Date validation passed.",
+            "field": null,
+            "ocr_value": null,
+            "reference_value": null
+          },
+          {
+            "rule": "DATABASE_FIELD_MATCH",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Name match in DB (Similarity: 100.0%).",
+            "field": "name",
+            "ocr_value": "Jaak-Kristjan JOEORG",
+            "reference_value": "Jaak-Kristjan JOEORG"
+          },
+          {
+            "rule": "DOCUMENT_STATUS",
+            "status": "PASS",
+            "severity": "LOW",
+            "message": "Document status is 'ACTIVE'.",
+            "field": "status",
+            "ocr_value": null,
+            "reference_value": "ACTIVE"
+          }
+        ],
+        "mismatches": [],
+        "warnings": [],
+        "errors": [],
+        "recommendation": "PASS",
+        "processing_time_ms": 603,
+        "normalized_fields": {
+          "permit_number": "PS1234567",
+          "date_of_expiry": "2025-09-01",
+          "surname": "JOEORG",
+          "given_name": "JAAK KRISTJAN",
+          "nationality": "M/M",
+          "gender": "M",
+          "permit_type": "PIKAAJALTNE",
+          "date_of_birth": "1980-01-08",
+          "name": "JAAK KRISTJAN JOEORG"
+        }
+      }
+    }
+  }
+}

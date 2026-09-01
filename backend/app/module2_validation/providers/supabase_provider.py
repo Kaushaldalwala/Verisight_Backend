@@ -2,7 +2,7 @@ import os
 from typing import Any, Optional
 from app.module2_validation.schemas.common import DataSource
 from app.module2_validation.providers.base import DocumentDataProvider
-from app.services.supabase import supabase
+from app.services.supabase import supabase_admin as supabase  # use service role to bypass RLS on val_* tables
 
 class SupabaseProvider(DocumentDataProvider):
     source_type = DataSource.GOVERNMENT_API  # We treat this as the source of truth
