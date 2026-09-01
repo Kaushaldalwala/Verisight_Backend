@@ -720,10 +720,10 @@ class VisaOCR:
             # DD-MM-YY
             r"\b\d{1,2}[/-]\d{1,2}[/-]\d{2}\b",
 
-            # DD MON YYYY
-            r"\b\d{1,2}\s+"
+            # DD MON YYYY (e.g. 23 JAN 2024 or 23JAN2024)
+            r"\b\d{1,2}\s*"
             r"(?:JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)"
-            r"\s+\d{4}\b"
+            r"\s*\d{2,4}\b"
         ]
 
         dates = []
@@ -873,6 +873,17 @@ class VisaOCR:
     # LABEL BASED EXTRACTION
     # ============================================================
 
+    KNOWN_LABEL_HEADERS = {
+        "NAME", "FULL NAME", "SURNAME", "GIVEN NAME", "GIVEN NAMES", "FIRST NAME",
+        "LAST NAME", "FAMILY NAME", "PASSPORT NUMBER", "PASSPORT NO", "PASSPORT #",
+        "PASSPORT", "VISA NUMBER", "VISA NO", "VISA #", "CONTROL NUMBER", "REFERENCE NUMBER",
+        "NATIONALITY", "COUNTRY", "VISA TYPE", "TYPE OF VISA", "CLASS", "SEX", "GENDER",
+        "BIRTH DATE", "DATE OF BIRTH", "DOB", "ISSUE DATE", "DATE OF ISSUE", "ISSUED",
+        "EXPIRATION DATE", "EXPIRY DATE", "DATE OF EXPIRY", "VALID UNTIL", "ISSUING POST",
+        "ISSUING POST NAME", "ISSUED AT", "PLACE OF ISSUE", "ENTRIES", "ANNOTATION",
+        "NUMBER", "TYPE", "POST", "DATE", "EXPIRATION", "ISSUE", "BIRTH", "TYPE /CLASS"
+    }
+
     def find_after_label(
         self,
         ocr_data,
@@ -889,10 +900,18 @@ class VisaOCR:
 
                     # Check following OCR items.
                     for next_item in ocr_data[
-                        index + 1:index + 4
+                        index + 1:index + 6
                     ]:
 
                         candidate = next_item["text"].strip()
+                        candidate_upper = candidate.upper()
+
+                        if candidate_upper in self.KNOWN_LABEL_HEADERS:
+                            continue
+
+                        if any(lbl in candidate_upper for lbl in ["PASSPORT", "BIRTH DATE", "NATIONALITY", "ISSUE DATE", "EXPIRATION", "CONTROL NUMBER", "TYPE /CLASS", "GIVEN NAME", "SURNAME", "SEX"]):
+                            if candidate_upper in ["PASSPORT NUMBER", "SEX", "BIRTH DATE", "NATIONALITY", "ISSUE DATE", "EXPIRATION DATE", "CONTROL NUMBER", "GIVEN NAME", "SURNAME", "ISSUING POST"]:
+                                continue
 
                         if candidate:
 
@@ -926,6 +945,30 @@ class VisaOCR:
             )
         )
 
+        pass_no = self.find_after_label(
+            ocr_data,
+            [
+                "PASSPORT NUMBER",
+                "PASSPORT NO",
+                "PASSPORT #"
+            ]
+        )
+        if not pass_no and passport_numbers:
+            pass_no = passport_numbers[0]
+
+        visa_no = self.find_after_label(
+            ocr_data,
+            [
+                "VISA NUMBER",
+                "VISA NO",
+                "VISA #",
+                "CONTROL NUMBER",
+                "REFERENCE NUMBER"
+            ]
+        )
+        if not visa_no and visa_numbers:
+            visa_no = visa_numbers[0]
+
         fields = {
 
             "name": self.find_after_label(
@@ -957,25 +1000,9 @@ class VisaOCR:
                 ]
             ),
 
-            "passport_number": self.find_after_label(
-                ocr_data,
-                [
-                    "PASSPORT NUMBER",
-                    "PASSPORT NO",
-                    "PASSPORT #"
-                ]
-            ),
+            "passport_number": pass_no,
 
-            "visa_number": self.find_after_label(
-                ocr_data,
-                [
-                    "VISA NUMBER",
-                    "VISA NO",
-                    "VISA #",
-                    "CONTROL NUMBER",
-                    "REFERENCE NUMBER"
-                ]
-            ),
+            "visa_number": visa_no,
 
             "nationality": self.extract_nationality(
                 full_text
@@ -1143,9 +1170,9 @@ class VisaOCR:
             if not duplicate:
                 unique_lines.append(item)
 
-        # Sort by vertical position.
+        # Sort by vertical position (Y coordinate)
         unique_lines.sort(
-            key=lambda x: x["bbox"][0][0]
+            key=lambda x: x["bbox"][0][1]
         )
 
         if len(unique_lines) < 2:
@@ -1195,6 +1222,10 @@ class VisaOCR:
                 .strip()
             )
 
+        visa_num = line2[:9].replace("<", "")
+        pass_num_raw = line2[28:42].replace("<", "")
+        pass_num = pass_num_raw if len(pass_num_raw) >= 6 else visa_num
+
         return {
 
             "valid": True,
@@ -1207,10 +1238,9 @@ class VisaOCR:
 
             "given_name": given_name,
 
-            "passport_number": (
-                line2[:9]
-                .replace("<", "")
-            ),
+            "visa_number": visa_num,
+
+            "passport_number": pass_num,
 
             "nationality": (
                 line2[10:13]
@@ -1223,10 +1253,7 @@ class VisaOCR:
 
             "expiration_date": line2[21:27],
 
-            "personal_number": (
-                line2[28:42]
-                .replace("<", "")
-            ),
+            "personal_number": pass_num_raw,
 
             "raw_line1": line1,
 

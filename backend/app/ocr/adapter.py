@@ -111,12 +111,28 @@ def _normalize_country(raw: str | None) -> str | None:
     return _NAME_MAP.get(raw, raw)
 
 
+_KNOWN_LABEL_HEADERS = {
+    "SEX", "GENDER", "BIRTH DATE", "DATE OF BIRTH", "DOB", "NATIONALITY",
+    "ISSUE DATE", "DATE OF ISSUE", "EXPIRATION DATE", "EXPIRY DATE", "VALID UNTIL",
+    "PASSPORT NUMBER", "PASSPORT NO", "VISA NUMBER", "VISA NO", "CONTROL NUMBER",
+    "GIVEN NAME", "SURNAME", "FULL NAME", "ISSUING POST", "TYPE /CLASS", "CLASS", "ENTRIES"
+}
+
+
 def _clean_str(v: Any) -> str | None:
-    """Strip whitespace and return None for empty values."""
+    """Strip whitespace and return None for empty values or header labels."""
     if v is None:
         return None
-    s = str(v).strip()
-    return s if s else None
+    if isinstance(v, list):
+        valid_items = [str(x).strip() for x in v if x and str(x).strip().upper() not in _KNOWN_LABEL_HEADERS]
+        if not valid_items:
+            return None
+        s = valid_items[0]
+    else:
+        s = str(v).strip()
+    if not s or s.upper() in _KNOWN_LABEL_HEADERS:
+        return None
+    return s
 
 
 def _normalise_gender(raw: Any) -> str | None:

@@ -15,6 +15,8 @@ from app.ocr import (
     permit_wrapper
 )
 
+from app.ocr.adapter import OCROutputAdapter
+
 # Validation engine
 from app.module2_validation.core.validator import ValidationEngine
 from app.module2_validation.schemas.input import DocumentInput
@@ -54,10 +56,10 @@ async def process_document(
         elif doc_type_upper == "PERMIT":
             ocr_res = permit_wrapper.process(temp_file_path)
             
-        # 3. Construct DocumentInput for Validation
-        # The OCR result gives us fields
-        fields = ocr_res.get("fields", {})
-        ocr_confidence = ocr_res.get("ocr_confidence", 0.0)
+        # 3. Construct DocumentInput for Validation using OCROutputAdapter
+        adapted = OCROutputAdapter.adapt(ocr_res, doc_type_override=doc_type_upper)
+        fields = adapted.get("fields", {})
+        ocr_confidence = adapted.get("ocr_confidence", ocr_res.get("ocr_confidence", 0.0))
         
         doc_input = DocumentInput(
             request_id=str(uuid.uuid4()),
